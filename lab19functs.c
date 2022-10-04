@@ -43,3 +43,19 @@ int findLocations(char str[], int locations[], char searchChar) {
     }
     return count;
 }
+
+int countSeqStr(char str[], char searchStr[]) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == searchStr[0]) {
+            int j = 0;
+            while (str[i + j] == searchStr[j]) {
+                j++;
+            }
+            if (j == strlen(searchStr)) {
+                count++;
+            }
+        }
+    }
+    return count + 1;
+}
