@@ -31,3 +31,15 @@ void replaceMultiChar(char str[], char searchChars[], char replaceChar) {
     }
     printf("New string: %s", str);
 }
+
+int findLocations(char str[], int locations[], char searchChar) {
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == searchChar) {
+            locations[count] = i;
+            count++;
+            printf("%c found at location %i\n", searchChar, i);
+        }
+    }
+    return count;
+}
