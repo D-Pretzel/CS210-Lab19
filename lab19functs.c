@@ -20,3 +20,14 @@ void replaceCharInStr(char str[], char searchChar, char replaceChar) {
     }
     printf("New string: %s", str);
 }
+
+void replaceMultiChar(char str[], char searchChars[], char replaceChar) {
+    for (int i = 0; i < strlen(str); i++) {
+        for (int j = 0; j < strlen(searchChars); j++) {
+            if (str[i] == searchChars[j]) {
+                str[i] = replaceChar;
+            }
+        }
+    }
+    printf("New string: %s", str);
+}
